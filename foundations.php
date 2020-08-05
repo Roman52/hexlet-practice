@@ -89,11 +89,15 @@
 //echo '<br>';
 //print_r($b);
 
+
+
+
+
 # exercises for php foundations
 
 # 01 Сумма двоичных чисел. Done
 
-//function binarySum( string $num1, string $num2):string
+//function binarySum(string $num1, string $num2): string
 //{
 //    return $res = decbin((int) (bindec($num1) + bindec($num2)));
 //}
@@ -131,10 +135,8 @@
 //    if ($num < 2) {
 //        return $num;
 //    } else {
-//        var_dump($num);
-//        var_dump(fib($num - 1));
-//return fib($num - 1) + fib($num - 2);
-//}
+//        return fib($num - 1) + fib($num - 2);
+//    }
 //}
 //
 //print_r(fib(4));
@@ -175,89 +177,110 @@
 //var_dump(addDigits(9));
 
 # 05 Сбалансированные скобки - сделано, но слишком заморочно походу я сделал.
-/*
-function isBalanced(string $str): bool
-{
-    $str = str_replace(' ', '', $str); // удалить пробелы между скобками
-
-    if ($str === '') {
-        return true;
-    }
-
-    if (preg_match('[\)\(]', $str) && !preg_match('[\(\)\(\)]', $str)) {
-        return false;
-    }
-
-    if ( !substr_count($str, '(') || !substr_count($str, ')')) {
+//function isBalanced(string $str): bool
+//{
+//    $str = str_replace(' ', '', $str); // удалить пробелы между скобками
+//
+//    if ($str === '') {
+//        return true;
+//    }
+//
+//    if (preg_match('[\)\(]', $str) && ! preg_match('[\(\)\(\)]', $str)) {
+//        return false;
+//    }
+//
+//    if (! substr_count($str, '(') || ! substr_count($str, ')')) {
         // если скобок в строке вообще нет (передали какую то строку с текстом)
-        return false;
-    } else {
-        return substr_count($str, '(') === substr_count($str, ')');
-    }
-}
+        //return false;
+    //} else {
+    //    return substr_count($str, '(') === substr_count($str, ')');
+    //}
+//}
 
-var_dump(isBalanced('('));
-*/
+//var_dump(isBalanced('('));
 
 # 06 Совершенное число
 //2 28 496 8121 - это примеры совершенных чисел
 // Если проверять число 8 589 869 056 - то php уже падает в ошибку памяти - Fatal error: Maximum execution time of 30 seconds - а так работает вроде. Написал сам, не подглядывал.
 
-/*
-function isPerfect(int $num): bool
-{
-    $i = $num - 1;
-    $sum = 0;
-    while ($i > 0) {
-        if (!is_float($num / $i)) {
-            $sum = $sum + $i;
-        }
+//function isPerfect(int $num): bool
+//{
+//    $i = $num - 1;
+//    $sum = 0;
+//    while ($i > 0) {
+//        if (! is_float($num / $i)) {
+//            $sum = $sum + $i;
+//        }
+//
+//        $i--;
+//    }
+//
+//    if ($sum === $num) {
+//        return true;
+//    }
+//
+//    return false;
+//}
 
-        $i--;
-    }
-
-    if ($sum === $num) return true;
-    return false;
-
-}
-
-var_dump(isPerfect(85));
-*/
+//var_dump(isPerfect(85));
 
 # 07 Счастливый билет - сделано. Сам. Не подглядывал.
-/*
-function isHappy(string $str): bool
-{
-    $strLen = strlen($str);
-    $partLen = strlen($str) / 2;
-    $sum1 = 0;
-    $sum2 = 0;
+//function isHappy(string $str): bool
+//{
+//    $strLen = strlen($str);
+//    $partLen = strlen($str) / 2;
+//    $sum1 = 0;
+//    $sum2 = 0;
+//
+//    if ($strLen % 2 !== 0) {
+//        return false;
+//    }
+//
+//    for ($i = 0; $i < $strLen; $i++) {
+//        if ($i < $partLen) {
+//            $sum1 = $sum1 + (int) $str[$i];
+//        }
+//        if ($i >= $partLen) {
+//            $sum2 = $sum2 + (int) $str[$i];
+//        }
+//    }
+//
+//    return $sum1 === $sum2;
+//}
 
-    if ($strLen % 2 !== 0) {
-        return false;
-    }
+//var_dump(isHappy('06'));
 
-    for ($i = 0; $i < $strLen; $i++) {
-        if ($i < $partLen) {
-            $sum1 = $sum1 + (int) $str[$i];
-        }
-        if ($i >= $partLen) {
-            $sum2 = $sum2 + (int) $str[$i];
-        }
-    }
+# 08 Физбазз - простая задача, но видимо я сделал слишком не элегантно, надо будет сравнить с решением учителя.
 
-    return $sum1 === $sum2;
-}
+//function fizzBuzz(int $begin, int $end)
+//{
+//    if ($begin > $end) {
+//        return false;
+//    }
+//
+//    for ($i = $begin; $i <= $end; $i++) {
+//        if ($i % 3 === 0 && $i % 5 === 0) {
+//            $str = 'FizzBuzz';
+//        } elseif ($i % 5 === 0) {
+//            $str = 'Buzz';
+//        } elseif ($i % 3 === 0) {
+//            $str = 'Fizz';
+//        } else {
+//            $str = $i;
+//        }
+//
+//        print_r($str.' ');
+//    }
+//}
 
-var_dump(isHappy('06'));
-*/
+//fizzBuzz(11, 20);
 
-# 08 Физбазз
+//function getPresent(string $predictScore, string $realScore) {
+//
+//}
 
-
-
-
-
+//getPresent('1-2', '2-1');
+//
 
 
 

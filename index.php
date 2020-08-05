@@ -1,4 +1,69 @@
 <?php
+# String reverse / переворот строки
+/*
+function reverseString(string $url) {
+    $i = 0;
+    $res = '';
+
+    while ($i < strlen($url)) {
+        $res = $url[$i] . $res;
+        $i++;
+    }
+
+    return $res;
+}
+
+echo '<pre>';
+print_r(reverseString('123456'));
+echo '</pre>';
+*/
+
+
+# 55 https://ru.code-basics.com/languages/php/modules/conditionals/lessons/if
+/*
+function getSentenceTone(string  $str) {
+    if ($str === strtoupper($str)) {
+        return 'scream';
+    }
+
+    return 'normal';
+}
+
+var_dump(getSentenceTone('HI'));
+*/
+
+# 56 https://ru.code-basics.com/languages/php/modules/conditionals/lessons/if-else
+/*
+function normalizeUrl(string $url) {
+    if (substr($url, 0, 7) === 'http://') {
+        return 'https://' . substr($url, 7);
+    }
+
+    return 'https://' . $url;
+}
+
+echo '<pre>';
+print_r(normalizeUrl('http://site.com'));
+echo '</pre>';
+*/
+
+# 58 https://ru.code-basics.com/languages/php/modules/conditionals/lessons/ternary-operator
+/*
+function convertString(string $str) {
+    # variant 1
+    return (strtolower($str[0]) === $str[0]) ? strrev($str) : $str;
+
+    # variant 2
+    if (strtolower($str[0]) === $str[0]) {
+        return strrev($str);
+    }
+
+    return $str;
+}
+
+var_dump(convertString('hello!'));
+*/
+
 # 62
 
 //function isArgumentsForSubstrCorrect($str, $index, $length) {
@@ -190,4 +255,81 @@
 //var_dump(date_default_timezone_get());
 
 
-print_r("- Are you hungry?\n- Aaaarrrgh!");
+//echo "- Are you hungry?\n- Aaaarrrgh!";
+
+// build menu
+/*
+$menu = [
+    [
+        'label' => 'Yii',
+        'url' => 'url',
+    ],
+    [
+        'label' => 'Yii1',
+        'items' => [
+            ['label' => 'Laravel', 'url' => 'url1'],
+            ['label' => 'Slim', 'url' => 'url2'],
+        ]
+    ],
+    [
+        'label' => 'Simfony',
+        'url' => 'url3',
+    ],
+];
+
+function buildMenu(array $menu) {
+    $html = '<ul>';
+    foreach ($menu as $item) {
+        $html .= '<li>';
+        if (isset($item['url'])) {
+            $html .= '<a href="' . $item['url'] . '">' . $item['label'] . '</a>';
+        } else {
+            $html .= '<span>' . $item['label'] . '</span>';
+        }
+
+        if (isset($item['items'])) {
+            $html .= buildMenu($item['items']);
+        }
+
+        $html .= '</li>';
+    }
+
+    $html .= '</ul>';
+
+    return $html;
+}
+
+//var_dump(buildMenu($menu));
+
+echo '<pre>';
+print_r(buildMenu($menu));
+echo '</pre>';
+*/
+
+/*
+echo '<ul>';
+foreach ($menu as $key => $item) :
+    echo '<li>';
+        if (isset($item['url'])) :
+            echo "<a href='{$item['url']}'>{$item['label']}</a>";
+        else :
+            echo "<span>{$item['label']}</span>";
+        endif;
+
+        if (isset($item['items'])) :
+            echo '<ul class="sub-menu">';
+                foreach ($item['items'] as $sub_item) :
+                    echo '<li>';
+                    if (isset($sub_item['url'])) :
+                        echo "<a href='{$sub_item['url']}'>{$sub_item['label']}</a>";
+                    else :
+                        echo "<span>{$sub_item['label']}</span>";
+                    endif;
+                    echo '</li>';
+                endforeach;
+            echo '</ul>';
+        endif;
+    echo '</li>';
+endforeach;
+echo '</ul>';
+*/

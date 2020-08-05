@@ -1,12 +1,12 @@
 {
-  "name": "wp-starter-theme",
+  "name": "hexletPractice",
   "version": "1.0.0",
-  "description": "WordPress Theme ",
+  "description": "Hexlet Practice Tasks",
   "main": "gulp.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Dylan Dunlop",
+  "author": "Roman Zharov",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^4.0.2",
