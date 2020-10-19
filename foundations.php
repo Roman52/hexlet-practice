@@ -1,4 +1,9 @@
 <?php
+//----------------------------------------------------------------------------------------------
+// Задачки для курса PHP основы (лекции)  https://ru.hexlet.io/courses/php-basics
+//----------------------------------------------------------------------------------------------
+
+
 # 4
 //function isPalindrome($str)
 //{
@@ -93,7 +98,14 @@
 
 
 
-# exercises for php foundations
+
+
+
+
+// ----------------------------------------------------------------------------------------------
+# Испытания
+// ----------------------------------------------------------------------------------------------
+
 
 # 01 Сумма двоичных чисел. Done
 
@@ -105,28 +117,33 @@
 //print_r(binarySum('10', '1'));
 
 # 02 степень тройки. Done
-//function isPowerOfThree(int $num): bool
-//{
-//    if ($num === 0) {
-//        return true;
-//    }
-//
-//    while ($num % 3 === 0) {
-//        $num = $num / 3;
-//    }
-//
-//    if ($num === 1) {
-//        return true;
-//    } else {
-//        return false;
-//    }
-//}
-//
+/*
+function isPowerOfThree(int $num): bool
+{
+    if ($num === 0) {
+        return false;
+    }
+
+    while ($num % 3 === 0) {
+        $num = $num / 3;
+    }
+
+    if ($num === 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+$a = isPowerOfThree(0); // → true (3^0)
+var_dump($a);
+
 //$i = 1;
 //while ($i < 100000) {
 //    if (isPowerOfThree($i)) echo $i . '<br>';
 //    $i++;
 //}
+*/
 
 # 03 Фибаначи - done, но я подсмотрел решение в комментариях, сам не разобрался.
 
@@ -141,7 +158,7 @@
 //
 //print_r(fib(4));
 
-//числа Фибоначи: 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
+//числа Фибоначи: 0 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
 
 # 04 добавляем цифры - рекурсия. Done
 //(здесь я использую Итеративный процесс рекурсии.)
@@ -177,27 +194,86 @@
 //var_dump(addDigits(9));
 
 # 05 Сбалансированные скобки - сделано, но слишком заморочно походу я сделал.
-//function isBalanced(string $str): bool
+/*
+function isBalanced(string $str): bool
+{
+    $str = str_replace(' ', '', $str); // удалить пробелы между скобками
+
+    if ($str === '') {
+        return true;
+    }
+
+    if (preg_match('[\)\(]', $str) && ! preg_match('[\(\)\(\)]', $str)) {
+        return false;
+    }
+
+    if (! substr_count($str, '(') || ! substr_count($str, ')')) {
+         //если скобок в строке вообще нет (передали какую то строку с текстом)
+        return false;
+    } else {
+        return substr_count($str, '(') === substr_count($str, ')');
+    }
+}
+*/
+
+//function isBalanced(string $str)
 //{
-//    $str = str_replace(' ', '', $str); // удалить пробелы между скобками
-//
 //    if ($str === '') {
 //        return true;
 //    }
 //
-//    if (preg_match('[\)\(]', $str) && ! preg_match('[\(\)\(\)]', $str)) {
+//    if (substr_count($str, '(') === substr_count($str, ')')) {
+//        $strLength = strlen($str);
+//        for ($i = 0; $i < $strLength; $i += 1) {
+//            if ($str[$i] === ')' && isset($str[$i + 1]) && $str[$i + 1] === '(') {
+//                if (isset($str[$i - 1]) && $str[$i - 1] !== '(') {
+//                    return false;
+//                }
+//            }
+//        }
+//
+//        return true;
+//    } else {
 //        return false;
 //    }
-//
-//    if (! substr_count($str, '(') || ! substr_count($str, ')')) {
-        // если скобок в строке вообще нет (передали какую то строку с текстом)
-        //return false;
-    //} else {
-    //    return substr_count($str, '(') === substr_count($str, ')');
-    //}
 //}
 
-//var_dump(isBalanced('('));
+/*
+function isBalanced($str)
+{
+    $count = 0;
+    for ($i = 0; $i < strlen($str); $i++) {
+        $count = $str[$i] === '(' ? $count + 1 : $count - 1;
+        if ($count < 0) {
+            return false;
+        }
+    }
+
+    return $count === 0;
+}
+
+var_dump(isBalanced( '(('));
+//var_dump(isBalanced('(()((((())))))'));
+
+//var_dump(isBalanced('())('));
+
+// )(
+*/
+
+/*
+ * tests:
+$str = '()'; // true
+$str2 = '(())'; // true
+$str3 = '(()((((())))))'; // true
+$str4 = ''; // true
+$str1 = '(('; // false
+$str2 = '())('; // false
+$str3 = '((())'; // false
+$str4 = '(())())'; // false
+$str5 = '(()(()))))'; //false
+$str6 = ')'; // false
+$str7 = '())(()'; // false
+ */
 
 # 06 Совершенное число
 //2 28 496 8121 - это примеры совершенных чисел
@@ -205,6 +281,10 @@
 
 //function isPerfect(int $num): bool
 //{
+//    if ($num === 0) {
+//        return false;
+//    }
+//
 //    $i = $num - 1;
 //    $sum = 0;
 //    while ($i > 0) {
@@ -221,8 +301,8 @@
 //
 //    return false;
 //}
-
-//var_dump(isPerfect(85));
+//
+//var_dump(isPerfect(2556));
 
 # 07 Счастливый билет - сделано. Сам. Не подглядывал.
 //function isHappy(string $str): bool
@@ -281,10 +361,3 @@
 
 //getPresent('1-2', '2-1');
 //
-
-
-
-
-
-
-
