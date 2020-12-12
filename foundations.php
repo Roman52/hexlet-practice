@@ -361,3 +361,19 @@ $str7 = '())(()'; // false
 
 //getPresent('1-2', '2-1');
 //
+
+function sumOfSeries($start, $finish)
+{
+    $sum = 0;
+    for ($i = $start; $i < $finish; $i++) {
+        $sum += $i;
+    }
+
+    return $sum;
+}
+
+$a = sumOfSeries(3, 5);
+
+echo '<pre>';
+print_r($a);
+echo '</pre>';

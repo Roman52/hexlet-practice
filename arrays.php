@@ -993,6 +993,7 @@ function hammingWeight(int $num)
 # 5 Умножение матриц
 // не понял пока что задания
 
+/*
 function multiply(array $matrix1, array $matrix2)
 {
     $res = [];
@@ -1058,6 +1059,7 @@ for ($j = 0, $i = 0; $j < 10; $i += 1, $j += 1) {
         $i -= 1;
     }
 }
+*/
 
 
 
@@ -1287,3 +1289,5 @@ echo '<pre>';
 print_r($a);
 echo '</pre>';
 */
+
+
