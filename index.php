@@ -12,6 +12,7 @@
         <li><a href="/code-basics.php">Задачки Code Basics</a></li>
         <li><a href="/foundations.php">Задачки Основы PHP</a></li>
         <li><a href="/arrays.php">Задачки PHP массивы</a></li>
+        <li><a href="/arrays-assoc.php">Задачки PHP ассоциативные массивы</a></li>
     </ul>
 </body>
 </html>
